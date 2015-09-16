@@ -1,0 +1,9 @@
+﻿<Window x:Class="WpfStudy.Test.TestSpinArrow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:animationUserControl="clr-namespace:WpfStudy.Resources.Controls.AnimationUserControl;assembly=WpfStudy.Resources"
+        Title="TestSpinArrow" Height="300" Width="300">
+    <Grid>
+        <animationUserControl:SpinArrow></animationUserControl:SpinArrow>
+    </Grid>
+</Window>

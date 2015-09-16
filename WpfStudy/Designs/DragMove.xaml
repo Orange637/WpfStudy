@@ -1,0 +1,11 @@
+﻿<Window x:Class="WpfStudy.Designs.DragMove"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None" AllowsTransparency="True"
+        Title="DragMove" Height="300" Width="300"
+        MouseLeftButtonDown="DragMove_OnMouseLeftButtonDown" Closing="ApplicationShutDown">
+    
+    <Grid>
+        <Rectangle Fill="Red"></Rectangle>
+    </Grid>
+</Window>

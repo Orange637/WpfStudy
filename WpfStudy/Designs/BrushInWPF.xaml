@@ -1,0 +1,306 @@
+﻿<controls:View x:Class="WpfStudy.Designs.BrushInWpf"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:controls="clr-namespace:WpfStudy.Resources.Controls;assembly=WpfStudy.Resources"
+               Title="BrushInWPF"
+               Width="400"
+               Height="700">
+    <Window.Resources>
+        <SolidColorBrush x:Key="SystemControlColor" Color="SeaShell" />
+        <Style TargetType="Rectangle">
+            <Setter Property="Height" Value="30" />
+        </Style>
+        <Style TargetType="Ellipse">
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Width" Value="50" />
+        </Style>
+    </Window.Resources>
+    <Border Background="{StaticResource SystemControlColor}">
+        <StackPanel>
+            <TextBlock>
+                <Run Text="1.Simple Example" />
+                <LineBreak />
+                <Run Text="Rectangle.Stroke&amp;Fill are all Brush Property" />
+            </TextBlock>
+            <Rectangle Fill="Green"
+                       Stroke="LightBlue"
+                       StrokeThickness="5" />
+
+            <TextBlock>
+                <Run>2.SolidColorBrush</Run>
+            </TextBlock>
+            <Rectangle StrokeThickness="2">
+                <Rectangle.Stroke>
+                    <SolidColorBrush Color="Peru" />
+                </Rectangle.Stroke>
+                <Rectangle.Fill>
+                    <SolidColorBrush Opacity="0.8" Color="Plum" />
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <TextBlock>
+                <Run>3.LinearGradientBrush</Run>
+                <LineBreak />
+                <Run>Left Top Point is 0,0; Right Bottom Point is 1,1;</Run>
+                <LineBreak />
+                <Run>and that is the default StartPonit &amp; EndPoint;</Run>
+                <LineBreak />
+                <Run>The Offset is From StartPoint 2 EndPoint;</Run>
+            </TextBlock>
+
+            <StackPanel Orientation="Horizontal">
+                <Ellipse HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush>
+                            <GradientStop Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="Red" />
+                            <GradientStop Offset="0.2" Color="Orange" />
+                            <GradientStop Offset="0.4" Color="Yellow" />
+                            <GradientStop Offset="0.6" Color="Green" />
+                            <GradientStop Offset="0.8" Color="Blue" />
+                            <GradientStop Offset="1" Color="Purple" />
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Offset="0" Color="Red" />
+                            <GradientStop Offset="0.4" Color="Blue" />
+                            <GradientStop Offset="0.4" Color="Yellow" />
+                            <GradientStop Offset="0.6" Color="Yellow" />
+                            <GradientStop Offset="0.6" Color="Green" />
+                            <GradientStop Offset="1" Color="Orange" />
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Width="50">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush>
+                            <GradientStop Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle Width="50">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle Width="50">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle Width="50">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0" Color="Red" />
+                            <GradientStop Offset="0.2" Color="Orange" />
+                            <GradientStop Offset="0.4" Color="Yellow" />
+                            <GradientStop Offset="0.6" Color="Green" />
+                            <GradientStop Offset="0.8" Color="Blue" />
+                            <GradientStop Offset="1" Color="Purple" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle Width="50">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Offset="0" Color="Red" />
+                            <GradientStop Offset="0.4" Color="Blue" />
+                            <GradientStop Offset="0.4" Color="Yellow" />
+                            <GradientStop Offset="0.6" Color="Yellow" />
+                            <GradientStop Offset="0.6" Color="Green" />
+                            <GradientStop Offset="1" Color="Orange" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </StackPanel>
+            <TextBlock Text="SpreadMethod" />
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Width="50">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush SpreadMethod="Pad" StartPoint="0,0" EndPoint="0,0.5">
+                            <GradientStop Offset="0" Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle Width="50">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush SpreadMethod="Repeat" StartPoint="0,0" EndPoint="0,0.5">
+                            <GradientStop Offset="0" Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle Width="50">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush SpreadMethod="Reflect" StartPoint="0,0" EndPoint="0,0.5">
+                            <GradientStop Offset="0" Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </StackPanel>
+
+            <TextBlock>
+                <Run>4.RadialGradientBrush</Run>
+            </TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <Ellipse HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush GradientOrigin="1,1">
+                            <GradientStop Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush GradientOrigin="0,1">
+                            <GradientStop Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
+                            <GradientStop Offset="0" Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush Center="0.5,0.5" RadiusX="0.5" RadiusY="0.25">
+                            <GradientStop Offset="0" Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Ellipse HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush GradientOrigin="1,0">
+                            <GradientStop Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <RadialGradientBrush GradientOrigin="0,0">
+                            <GradientStop Color="Pink" />
+                            <GradientStop Offset="0.5" Color="Green" />
+                            <GradientStop Offset="1" Color="Blue" />
+                        </RadialGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </StackPanel>
+
+            <TextBlock>
+                <Run>5.Image Brush</Run>
+            </TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <Ellipse HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="D:\2.Picture\collection\lemons.jpg" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="D:\2.Picture\collection\haapybirthday.jpg"
+                                    Stretch="Uniform"
+                                    TileMode="Tile" />
+                    </Ellipse.Fill>
+                </Ellipse>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Ellipse Width="100"
+                         Height="100"
+                         HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <ImageBrush AlignmentX="Center"
+                                    AlignmentY="Center"
+                                    ImageSource="D:\2.Picture\collection\codemonkey.jpg"
+                                    Stretch="None" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Ellipse Width="200"
+                         Height="200"
+                         HorizontalAlignment="Left">
+                    <Ellipse.Fill>
+                        <ImageBrush AlignmentX="Center"
+                                    AlignmentY="Center"
+                                    ImageSource="D:\2.Picture\collection\codemonkey.jpg"
+                                    Stretch="None" />
+                    </Ellipse.Fill>
+                </Ellipse>
+            </StackPanel>
+
+            <!--
+                <TextBlock>
+                <Run Text="6.VeidoBrush" />
+                </TextBlock>
+                <StackPanel Orientation="Horizontal">
+                <MediaElement x:Name="Wildlife" Source="C:\Users\Public\Videos\Sample Videos\Wildlife.wmv" />
+                <Rectangle Height="100">
+                <Rectangle.Fill>
+                <VisualBrush Visual="Wildlife" />
+                </Rectangle.Fill>
+                </Rectangle>
+                </StackPanel>
+            -->
+        </StackPanel>
+    </Border>
+</controls:View>

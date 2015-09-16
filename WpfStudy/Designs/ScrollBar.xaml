@@ -1,0 +1,38 @@
+﻿<controls:View x:Class="WpfStudy.Designs.ScrollBar"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:controls="clr-namespace:WpfStudy.Resources.Controls;assembly=WpfStudy.Resources"
+               Title="ScrollBar"
+               Width="500"
+               Height="500">
+    <Grid>
+        <ListBox Width="100" Height="200">
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+            <ListBoxItem Content="This is a Listbox Item, so i can see the effect!" />
+        </ListBox>
+    </Grid>
+</controls:View>

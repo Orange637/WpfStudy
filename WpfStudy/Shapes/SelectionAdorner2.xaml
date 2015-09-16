@@ -1,0 +1,14 @@
+﻿<Window x:Class="WpfStudy.Shapes.SelectionAdorner2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SelectionAdorner2"
+        WindowStartupLocation="CenterScreen">
+    <Canvas Name="Container"
+            MouseLeftButtonDown="Container_OnMouseLeftButtonDown"
+            MouseLeftButtonUp="Container_OnMouseUp"
+            MouseMove="Container_OnMouseMove">
+        <Canvas.Background>
+            <ImageBrush ImageSource="/WpfStudy.Resources;component/Images/bg.jpg" />
+        </Canvas.Background>
+    </Canvas>
+</Window>

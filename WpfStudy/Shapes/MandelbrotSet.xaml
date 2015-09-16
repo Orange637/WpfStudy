@@ -1,0 +1,9 @@
+﻿<controls:View x:Class="WpfStudy.Shapes.MandelbrotSet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                             xmlns:controls="clr-namespace:WpfStudy.Resources.Controls;assembly=WpfStudy.Resources"
+                             Title="MandelbrotSet" ResizeMode="CanResize" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Image Width="600" Height="600" x:Name="Image"></Image>
+    </Grid>
+</controls:View>

@@ -1,0 +1,86 @@
+﻿<controls:View x:Class="WpfStudy.Others.TestInternetInvalid"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:controls="clr-namespace:WpfStudy.Resources.Controls;assembly=WpfStudy.Resources"
+               Title="TestInternetInvalid"
+               Width="800"
+               Height="300"
+               DataContext="{Binding RelativeSource={RelativeSource Self}}"
+               WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Label Content="Internet State:" />
+            <!--  Target="State"  -->
+            <TextBox x:Name="State" Text="{Binding InternetState}" />
+        </StackPanel>
+
+        <Button Grid.Row="1"
+                Click="ViewInternetState"
+                Content="View" />
+
+        <ListView x:Name="NetworkInterfaceList"
+                  Grid.Row="2"
+                  ItemsSource="{Binding NetworkInterfaceCollection}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Id}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Name">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Description">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Description}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="OperationalStatus">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding OperationalStatus}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Speed">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Speed}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Ips">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <ListView ItemsSource="{Binding GetIPProperties}">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn>
+                                                <TextBlock Text="{Binding}" />
+                                            </GridViewColumn>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</controls:View>

@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfStudy.Theading.BusyIndicator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:WpfStudy.Resources.Controls;assembly=WpfStudy.Resources"
+        Title="BusyIndicator"
+        Width="300"
+        Height="700"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="300" />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <controls:BusyIndicator IsBusy="{Binding IsBusy, Mode=TwoWay}" />
+
+            <Button Click="ButtonBase_OnClick" Content="StackPanel" />
+        </StackPanel>
+
+        <Grid Grid.Row="1" Background="Purple">
+            <controls:BusyIndicator Name="Busy" IsBusy="{Binding IsBusy}" Text="SOme"/>
+            <StackPanel>
+                <Button Click="ButtonBase_OnClick" Content="Grid" />
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <Button Height="40" Click="ShowBusyIndeicator">Show Busy Indicator</Button>
+        </Grid>
+    </Grid>
+</Window>

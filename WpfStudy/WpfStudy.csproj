@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{18FDD79C-AB5D-41B0-A2CB-18B02BF893A3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WpfStudy</RootNamespace>
+    <AssemblyName>WpfStudy</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <ExpressionBlendVersion>5.0.40218.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Fluent">
+      <HintPath>..\Lib\FluentRibbon\Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\TaskVision\Lib\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BasicControls\DragableListBox.xaml.cs">
+      <DependentUpon>DragableListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BasicControls\DragDropListBox.xaml.cs">
+      <DependentUpon>DragDropListBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BasicControls\ImageControlUsage.xaml.cs">
+      <DependentUpon>ImageControlUsage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BasicControls\TextBoxCanLostFocus.xaml.cs">
+      <DependentUpon>TextBoxCanLostFocus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BasicControls\VisualItem.cs" />
+    <Compile Include="BasicControls\VisualLogicalTree.xaml.cs">
+      <DependentUpon>VisualLogicalTree.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BasicControls\WebBrowserSource.xaml.cs">
+      <DependentUpon>WebBrowserSource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Behaviors\CustomBehavior.xaml.cs">
+      <DependentUpon>CustomBehavior.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Behaviors\MovingCircle.xaml.cs">
+      <DependentUpon>MovingCircle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Behaviors\ShowDialog.xaml.cs">
+      <DependentUpon>ShowDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Behaviors\VisualTreeStudy.xaml.cs">
+      <DependentUpon>VisualTreeStudy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Bindings\BindingLoseEfficacy.xaml.cs">
+      <DependentUpon>BindingLoseEfficacy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Bindings\GridStudy.xaml.cs">
+      <DependentUpon>GridStudy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Bindings\Validation2.xaml.cs">
+      <DependentUpon>Validation2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\ImageScroll.xaml.cs">
+      <DependentUpon>ImageScroll.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\ImageViewer.xaml.cs">
+      <DependentUpon>ImageViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Commands\RelayCommandBase.cs" />
+    <Compile Include="Commands\RelayCommandTest.xaml.cs">
+      <DependentUpon>RelayCommandTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Commands\ResetCommand.cs" />
+    <Compile Include="Commands\SimpleNotepad.xaml.cs">
+      <DependentUpon>SimpleNotepad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\BrushInWPF.xaml.cs">
+      <DependentUpon>BrushInWPF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\DragMove.xaml.cs">
+      <DependentUpon>DragMove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Designs\ScrollBar.xaml.cs">
+      <DependentUpon>ScrollBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NotifyIcon\SimpleShowCase.xaml.cs">
+      <DependentUpon>SimpleShowCase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Others\DragAndDrop.xaml.cs">
+      <DependentUpon>DragAndDrop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Bindings\FontStudyView.xaml.cs">
+      <DependentUpon>FontStudyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BasicControls\GroupCollectionView.xaml.cs">
+      <DependentUpon>GroupCollectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Others\ExpanderStudy.xaml.cs">
+      <DependentUpon>ExpanderStudy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Others\MasterView.xaml.cs">
+      <DependentUpon>MasterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Bindings\MultiBindings.xaml.cs">
+      <DependentUpon>MultiBindings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Others\TemlateStudy.xaml.cs">
+      <DependentUpon>TemlateStudy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Others\TestInternetInvalid.xaml.cs">
+      <DependentUpon>TestInternetInvalid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BasicControls\TreeView.xaml.cs">
+      <DependentUpon>TreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Bindings\ValidateStudyView.xaml.cs">
+      <DependentUpon>ValidateStudyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\PathFigure.xaml.cs">
+      <DependentUpon>PathFigure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\Ploygen.xaml.cs">
+      <DependentUpon>Ploygen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\SelectionAdorner2.xaml.cs">
+      <DependentUpon>SelectionAdorner2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\StoryBoard.xaml.cs">
+      <DependentUpon>StoryBoard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Test\CanvasTest.xaml.cs">
+      <DependentUpon>CanvasTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Test\Ribbon.xaml.cs">
+      <DependentUpon>Ribbon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Test\TestSpinArrow.xaml.cs">
+      <DependentUpon>TestSpinArrow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theading\BusyIndicator.xaml.cs">
+      <DependentUpon>BusyIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theading\BusyIndicator2.xaml.cs">
+      <DependentUpon>BusyIndicator2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theading\Dispatcher.xaml.cs">
+      <DependentUpon>Dispatcher.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Theading\UIThread.xaml.cs">
+      <DependentUpon>UIThread.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BasicControls\DragableListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BasicControls\DragDropListBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BasicControls\ImageControlUsage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BasicControls\TextBoxCanLostFocus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BasicControls\VisualLogicalTree.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BasicControls\WebBrowserSource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Behaviors\CustomBehavior.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Behaviors\MovingCircle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Behaviors\ShowDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Behaviors\VisualTreeStudy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Bindings\BindingLoseEfficacy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Bindings\GridStudy.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Bindings\Validation2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\ImageScroll.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\ImageViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\RelayCommandTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Commands\SimpleNotepad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Designs\BrushInWPF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Designs\DragMove.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Designs\ScrollBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NotifyIcon\SimpleShowCase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Others\ExpanderStudy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Others\TemlateStudy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shapes\AnimationEasing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shapes\MandelbrotSet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shapes\PathFigure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shapes\Ploygen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shapes\RingShape.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shapes\SelectionAdorner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shapes\SelectionAdorner2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shapes\SimpleAnimation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shapes\SimpleTransform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shapes\StoryBoard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shell.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shapes\AnimationEasing.xaml.cs">
+      <DependentUpon>AnimationEasing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\MandelbrotSet.xaml.cs">
+      <DependentUpon>MandelbrotSet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\RingShape.xaml.cs">
+      <DependentUpon>RingShape.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\SelectionAdorner.xaml.cs">
+      <DependentUpon>SelectionAdorner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\SimpleAnimation.xaml.cs">
+      <DependentUpon>SimpleAnimation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\SimpleTransform.xaml.cs">
+      <DependentUpon>SimpleTransform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Others\DragAndDrop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Bindings\FontStudyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BasicControls\GroupCollectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Others\MasterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Bindings\MultiBindings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Others\TestInternetInvalid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BasicControls\TreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Bindings\ValidateStudyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Test\CanvasTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Test\Ribbon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Test\TestSpinArrow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theading\BusyIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theading\BusyIndicator2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theading\Dispatcher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theading\UIThread.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\WpfStudy.Model.csproj">
+      <Project>{b51ec0be-6951-41f4-8d41-ecebbd29c78d}</Project>
+      <Name>WpfStudy.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfStudy.Infrastructure\WpfStudy.Infrastructure.csproj">
+      <Project>{ad750a01-fda2-48f8-bae9-905783e4ca54}</Project>
+      <Name>WpfStudy.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfStudy.Resources\WpfStudy.Resources.csproj">
+      <Project>{63f9970b-dcd9-42c5-97d7-4470e587cee5}</Project>
+      <Name>WpfStudy.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

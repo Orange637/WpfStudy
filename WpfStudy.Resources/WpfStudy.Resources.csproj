@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{63F9970B-DCD9-42C5-97D7-4470E587CEE5}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WpfStudy.Resources</RootNamespace>
+    <AssemblyName>WpfStudy.Resources</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Lib\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\CustomProperty.cs" />
+    <Compile Include="Behaviors\DragDropHelper.cs" />
+    <Compile Include="Behaviors\FocusService.cs" />
+    <Compile Include="Commands\CustomCommand.cs" />
+    <Compile Include="Controls\AnimationUserControl\BlurShadow.xaml.cs">
+      <DependentUpon>BlurShadow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Adorners\ContentAdorner.cs" />
+    <Compile Include="Controls\AnimationUserControl\MetroWaiting.xaml.cs">
+      <DependentUpon>MetroWaiting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AnimationUserControl\SpinArrow.xaml.cs">
+      <DependentUpon>SpinArrow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BusyIndicator.cs" />
+    <Compile Include="Controls\BusyIndicator2.cs" />
+    <Compile Include="Controls\Dialog.xaml.cs" />
+    <Compile Include="Controls\Adorners\FrameworkElementAdorner.cs" />
+    <Compile Include="Controls\AnimationUserControl\LoadingAnimation.xaml.cs">
+      <DependentUpon>LoadingAnimation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DraggedAdorner.cs" />
+    <Compile Include="Controls\InsertionAdorner.cs" />
+    <Compile Include="Controls\MessageDialog.cs" />
+    <Compile Include="Controls\MessageDialogImage.cs" />
+    <Compile Include="Controls\NotifyIcon\BalloonIcon.cs" />
+    <Compile Include="Controls\NotifyIcon\Interop\BalloonFlags.cs" />
+    <Compile Include="Controls\NotifyIcon\Interop\IconDataMembers.cs" />
+    <Compile Include="Controls\NotifyIcon\Interop\IconState.cs" />
+    <Compile Include="Controls\NotifyIcon\Interop\MouseEvent.cs" />
+    <Compile Include="Controls\NotifyIcon\Interop\NotifyCommand.cs" />
+    <Compile Include="Controls\NotifyIcon\Interop\NotifyIconData.cs" />
+    <Compile Include="Controls\NotifyIcon\Interop\NotifyIconVersion.cs" />
+    <Compile Include="Controls\NotifyIcon\Interop\Point.cs" />
+    <Compile Include="Controls\NotifyIcon\Interop\TrayInfo.cs" />
+    <Compile Include="Controls\NotifyIcon\Interop\WinApi.cs" />
+    <Compile Include="Controls\NotifyIcon\Interop\WindowClass.cs" />
+    <Compile Include="Controls\NotifyIcon\Interop\WindowMessageSink.cs" />
+    <Compile Include="Controls\NotifyIcon\PopupActivationMode.cs" />
+    <Compile Include="Controls\NotifyIcon\RoutedEventHelper.cs" />
+    <Compile Include="Controls\NotifyIcon\TaskbarIcon.cs" />
+    <Compile Include="Controls\NotifyIcon\TaskbarIcon.Declarations.cs" />
+    <Compile Include="Controls\NotifyIcon\Util.cs" />
+    <Compile Include="Controls\RingShape.cs" />
+    <Compile Include="Controls\Adorners\SelectionAdorner.cs" />
+    <Compile Include="Controls\Adorners\SelectionAdorner2.cs" />
+    <Compile Include="Controls\View.cs" />
+    <Compile Include="Converters\BreakPointConverter.cs" />
+    <Compile Include="Converters\FileNameConverter.cs" />
+    <Compile Include="Converters\RgbConverter.cs" />
+    <Compile Include="Converters\UriConverter.cs" />
+    <Compile Include="Extensions\Utilities.cs" />
+    <Compile Include="Extensions\VisualTreeHelperExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Behaviors\RunProcessBehavior.cs" />
+    <Compile Include="Validations\MinAgeValidation.cs" />
+    <Compile Include="Validations\MyIntValidationRule.cs" />
+    <Compile Include="Validations\StringNotEmptyValidation.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Assets\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AnimationUserControl\BlurShadow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AnimationUserControl\MetroWaiting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AnimationUserControl\SpinArrow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Dialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\AnimationUserControl\LoadingAnimation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Converters\Converters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Images\Images.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\BusyIndicatorStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\GroupContainerStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\MessageDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ScrollBarStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Themes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ViewStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Validations\Validations.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\appbar.transform.rotate.clockwise.png" />
+    <Resource Include="Images\appbar.transform.rotate.counterclockwise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\appbar.clipboard.paste.png" />
+    <Resource Include="Images\appbar.page.copy.png" />
+    <Resource Include="Images\appbar.redo.curve.png" />
+    <Resource Include="Images\appbar.undo.curve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bulb.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icons\Bulb.ico" />
+    <Resource Include="Images\Icons\Computers.ico" />
+    <Resource Include="Images\Icons\Error.ico" />
+    <Resource Include="Images\Icons\Inactive.ico" />
+    <Resource Include="Images\Icons\NetDrives.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Loading.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Color.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Default.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

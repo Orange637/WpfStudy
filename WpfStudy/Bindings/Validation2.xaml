@@ -1,0 +1,59 @@
+﻿<Window x:Class="WpfStudy.Bindings.Validation2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:validations="clr-namespace:WpfStudy.Resources.Validations;assembly=WpfStudy.Resources"
+        Title="Mgen"
+        Width="575"
+        Height="400"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Loaded="Window_Loaded">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type ValidationError}">
+            <TextBlock Margin="1"
+                       Foreground="Red"
+                       Text="{Binding Path=ErrorContent}" />
+        </DataTemplate>
+    </Window.Resources>
+    <StackPanel Margin="10">
+        <Label>属性中异常验证</Label>
+        <TextBox Name="tie" Text="{Binding Int_EXP, UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True}" />
+        <ContentControl Content="{Binding (Validation.Errors)[0], ElementName=tie}" />
+
+        <Label>自定义ValidationRule验证</Label>
+        <TextBox Name="tce">
+            <TextBox.Text>
+                <Binding Path="Int_NOM" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validations:MyIntValidationRule ValidationStep="ConvertedProposedValue" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ContentControl Content="{Binding (Validation.Errors)[0], ElementName=tce}" />
+
+        <Label>IDataErrorInfo验证</Label>
+        <TextBox Name="tii" Text="{Binding Int_DEI, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" />
+        <ContentControl Content="{Binding (Validation.Errors)[0], ElementName=tii}" />
+
+        <Label>自定义ValidationRule验证(设置ValidatesOnTargetUpdated)</Label>
+        <TextBox Name="tceEX">
+            <TextBox.Text>
+                <Binding Path="Int_NOM" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validations:MyIntValidationRule ValidatesOnTargetUpdated="True" ValidationStep="ConvertedProposedValue" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ContentControl Content="{Binding (Validation.Errors)[0], ElementName=tceEX}" />
+
+        <Label>属性中异常验证(手动更新)</Label>
+        <TextBox Name="tieEX"
+                 Loaded="tieEX_Loaded"
+                 Text="{Binding Int_EXP,
+                                UpdateSourceTrigger=PropertyChanged,
+                                ValidatesOnExceptions=True}" />
+        <ContentControl Content="{Binding (Validation.Errors)[0], ElementName=tieEX}" />
+
+    </StackPanel>
+</Window>

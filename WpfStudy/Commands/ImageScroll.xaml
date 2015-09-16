@@ -1,0 +1,107 @@
+﻿<controls:View x:Class="WpfStudy.Commands.ImageScroll"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:controls="clr-namespace:WpfStudy.Resources.Controls;assembly=WpfStudy.Resources"
+               Title="ImageScroll"
+               Width="600"
+               Height="600">
+    <Window.Resources>
+        <Style x:Key="Linear" TargetType="ToolBar">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="1,0.5" EndPoint="1,0.1">
+                        <GradientStop Color="Purple" />
+                        <GradientStop Color="AliceBlue" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="GridMain">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <!--  加载控件  -->
+        <!--  工具栏  -->
+        <ToolBar Name="ToolBar"
+                 Grid.Row="0"
+                 Style="{StaticResource Linear}">
+            <Button Name="btnOpenFile"
+                    Click="btnOpenFile_Click"
+                    Tag="OpenFile"
+                    ToolTip="OpenFile">
+                <Image Source="pack://application:,,,/WpfStudy.Resources;component/Images/appbar.transform.rotate.counterclockwise.png" />
+            </Button>
+            <Button Name="btn1"
+                    Click="btnOpenFile_Click"
+                    Tag="InitImage"
+                    ToolTip="InitImage">
+                <Image Source="pack://application:,,,/WpfStudy.Resources;component/Images/appbar.transform.rotate.counterclockwise.png" />
+                <!--  <Image Source="/Images/1.jpg"/>  -->
+            </Button>
+            <Button Name="btn2"
+                    Click="btnOpenFile_Click"
+                    Tag="OcrKnow"
+                    ToolTip="OcrKnow">
+                <Image Source="pack://application:,,,/WpfStudy.Resources;component/Images/appbar.transform.rotate.counterclockwise.png" />
+                <!--  <Image Source="/Images/2.jpg"/>  -->
+            </Button>
+            <Button Name="btn3"
+                    Click="btnOpenFile_Click"
+                    Tag="SaveText"
+                    ToolTip="SaveText">
+                <Image Source="pack://application:,,,/WpfStudy.Resources;component/Images/appbar.transform.rotate.counterclockwise.png" />
+                <!--  <Image Source="/Images/3.jpg"/>  -->
+            </Button>
+            <Button Name="btn4"
+                    Click="btnOpenFile_Click"
+                    Tag="RotateTransform"
+                    ToolTip="RotateTranform">
+                <Image Source="pack://application:,,,/WpfStudy.Resources;component/Images/appbar.transform.rotate.counterclockwise.png" />
+                <!--  <Image Source="/Images/4.jpg"/>  -->
+            </Button>
+            <Separator />
+            <Button Name="btn5"
+                    Click="btnOpenFile_Click"
+                    Tag="AboutBox"
+                    ToolTip="AboutBox">
+                <Image Source="pack://application:,,,/WpfStudy.Resources;component/Images/appbar.transform.rotate.counterclockwise.png" />
+                <!--  <Image Source="/Images/5.jpg"/>  -->
+            </Button>
+        </ToolBar>
+        <!--  中间显示的图片与文字内容  -->
+        <Grid Name="GridMiddle" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <!--  <ColumnDefinition />  -->
+            </Grid.ColumnDefinitions>
+            <Rectangle Name="RectTest"
+                       Grid.Column="0"
+                       ForceCursor="False">
+                <Rectangle.Fill>
+                    <VisualBrush Stretch="Uniform">
+                        <VisualBrush.Visual>
+                            <Image Name="ImgInfo" Source="pack://application:,,,/WpfStudy.Resources;component/Images/appbar.transform.rotate.counterclockwise.png" />
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <GridSplitter Width="6" />
+            <!--
+                <TextBox Name="txtShow"
+                Grid.Column="1"
+                FontSize="20"
+                TextWrapping="Wrap" />
+            -->
+        </Grid>
+        <!--  状态栏显示  -->
+        <!--
+            <StatusBar Name="statu" Grid.Row="2">
+            <StatusBarItem Content="111111" />
+            <StatusBarItem Content="222222" />
+            </StatusBar>
+        -->
+    </Grid>
+</controls:View>

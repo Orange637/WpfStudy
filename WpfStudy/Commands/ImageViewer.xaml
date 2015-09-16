@@ -1,0 +1,109 @@
+﻿<controls:View x:Class="WpfStudy.Commands.ImageViewer"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:commands="clr-namespace:WpfStudy.Resources.Commands;assembly=WpfStudy.Resources"
+               xmlns:controls="clr-namespace:WpfStudy.Resources.Controls;assembly=WpfStudy.Resources"
+               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+               xmlns:model="clr-namespace:WpfStudy.Model;assembly=WpfStudy.Model"
+               Title="RoutedCommans"
+               Width="600"
+               Height="800"
+               DataContext="{Binding RelativeSource={RelativeSource Self}}"
+               WindowStartupLocation="CenterScreen"
+               mc:Ignorable="d">
+    <Window.CommandBindings>
+        <CommandBinding Command="Open" Executed="OpenImageFile" />
+        <CommandBinding CanExecute="OnIsImageExist"
+                        Command="IncreaseZoom"
+                        Executed="ZoomIn" />
+        <CommandBinding CanExecute="OnIsImageExist"
+                        Command="DecreaseZoom"
+                        Executed="ZoomOut" />
+        <CommandBinding CanExecute="OnIsImageExist"
+                        Command="commands:CustomCommands.ResetCommand"
+                        Executed="ResetZoom" />
+        <CommandBinding CanExecute="OnIsImageExist"
+                        Command="commands:CustomCommands.FitCommand"
+                        Executed="FitZoom" />
+        <CommandBinding CanExecute="OnIsImageExist"
+                        Command="commands:CustomCommands.RotateLeftCommand"
+                        Executed="RotateLeft" />
+        <CommandBinding CanExecute="OnIsImageExist"
+                        Command="commands:CustomCommands.RotateRightCommand"
+                        Executed="RotateRight" />
+    </Window.CommandBindings>
+    <Grid DataContext="{Binding ImageData}" d:DataContext="{d:DesignInstance Type=model:ImageData, IsDesignTimeCreatable=True}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ToolBar>
+            <Button Margin="1" Command="Open">Open File</Button>
+            <Button Margin="1" Command="IncreaseZoom">Zoom In</Button>
+            <Button Margin="1" Command="DecreaseZoom">Zoom Out</Button>
+            <Button Margin="1" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}, Path=ResetCommand}">Orginal</Button>
+            <Button Margin="1" Command="commands:CustomCommands.FitCommand">Fit</Button>
+            <Button Margin="1" Command="commands:CustomCommands.RotateLeftCommand">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="24" Source="pack://application:,,,/WpfStudy.Resources;component/Images/appbar.transform.rotate.counterclockwise.png" />
+                    <TextBlock Text="Rotate Left" />
+                </StackPanel>
+            </Button>
+            <Button Margin="1" Command="commands:CustomCommands.RotateRightCommand">
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="24" Source="pack://application:,,,/WpfStudy.Resources;component/Images/appbar.transform.rotate.clockwise.png" />
+                    <TextBlock Text="Rotate Right" />
+                </StackPanel>
+            </Button>
+        </ToolBar>
+        <ScrollViewer x:Name="ImageScroll"
+                      Grid.Row="1"
+                      HorizontalScrollBarVisibility="Auto"
+                      VerticalScrollBarVisibility="Auto">
+            <!--
+                <Rectangle>
+                <Rectangle.Fill>
+                <VisualBrush>
+                <VisualBrush.Visual>
+            -->
+            <Image Name="ImageFile"
+                   Source="{Binding SourcePath}"
+                   Stretch="None">
+                <Image.LayoutTransform>
+                    <TransformGroup>
+                        <RotateTransform Angle="{Binding Angle}" />
+                        <ScaleTransform ScaleX="{Binding Zoom}" ScaleY="{Binding Zoom}" />
+                    </TransformGroup>
+                </Image.LayoutTransform>
+                <!--
+                    <Image.RenderTransform>
+                    <TransformGroup>
+                    <RotateTransform Angle="{Binding Angle}" />
+                    <ScaleTransform ScaleX="{Binding Zoom}" ScaleY="{Binding Zoom}" />
+                    </TransformGroup>
+                    </Image.RenderTransform>
+                    <Image.RenderTransformOrigin>
+                    <Point X="0.5" Y="0.5" />
+                    </Image.RenderTransformOrigin>
+                -->
+            </Image>
+            <!--
+                </VisualBrush.Visual>
+                </VisualBrush>
+                </Rectangle.Fill>
+                </Rectangle>
+            -->
+        </ScrollViewer>
+        <StatusBar Grid.Row="2">
+            <TextBlock Text="{Binding SourcePath, StringFormat=Path:{0}, TargetNullValue=''}" />
+            <TextBlock>
+                <Run FontWeight="Bold" Text="Height*Width:" />
+                <Run Text="{Binding ElementName=ImageFile, Path=ActualHeight, StringFormat={}{0:N0}, Mode=OneWay}" />
+                <Run Text=" * " />
+                <Run Text="{Binding ElementName=ImageFile, Path=ActualWidth, StringFormat={}{0:N0}, Mode=OneWay}" />
+            </TextBlock>
+        </StatusBar>
+    </Grid>
+</controls:View>

@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/WpfStudy.Resources;component/Converters/Converters.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/WpfStudy.Resources;component/Themes/Themes.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/WpfStudy.Resources;component/Validations/Validations.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

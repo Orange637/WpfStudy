@@ -1,0 +1,14 @@
+﻿<Application x:Class="WpfStudy.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Name="app"
+             StartupUri="Shell.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Fluent;Component/Themes/Office2010/Silver.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WpfStudy.Resources;component/Assets/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

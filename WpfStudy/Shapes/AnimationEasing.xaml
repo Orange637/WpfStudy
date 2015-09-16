@@ -1,0 +1,247 @@
+﻿<controls:View x:Class="WpfStudy.Shapes.AnimationEasing"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:controls="clr-namespace:WpfStudy.Resources.Controls;assembly=WpfStudy.Resources"
+               Title="AnimationEasing"
+               Width="800"
+               Height="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button>
+                Normal
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:3"
+                                                 From="40"
+                                                 Storyboard.TargetName="CircleOne"
+                                                 Storyboard.TargetProperty="(Canvas.Top)"
+                                                 To="200" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button>
+                Circle Easing
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:3"
+                                                 From="40"
+                                                 Storyboard.TargetName="CircleTwo"
+                                                 Storyboard.TargetProperty="(Canvas.Top)"
+                                                 To="200">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CircleEase />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button>
+                Cubic
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:3"
+                                                 From="40"
+                                                 Storyboard.TargetName="CircleThree"
+                                                 Storyboard.TargetProperty="(Canvas.Top)"
+                                                 To="200">
+                                    <DoubleAnimation.EasingFunction>
+                                        <CubicEase />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button>
+                Elastic
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:3"
+                                                 From="40"
+                                                 Storyboard.TargetName="CircleFour"
+                                                 Storyboard.TargetProperty="(Canvas.Top)"
+                                                 To="200">
+                                    <DoubleAnimation.EasingFunction>
+                                        <ElasticEase />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button>
+                Exponential
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:3"
+                                                 From="40"
+                                                 Storyboard.TargetName="CircleFive"
+                                                 Storyboard.TargetProperty="(Canvas.Top)"
+                                                 To="200">
+                                    <DoubleAnimation.EasingFunction>
+                                        <ExponentialEase></ExponentialEase>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button>
+                Power
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:3"
+                                                 From="40"
+                                                 Storyboard.TargetName="CircleSix"
+                                                 Storyboard.TargetProperty="(Canvas.Top)"
+                                                 To="200">
+                                    <DoubleAnimation.EasingFunction>
+                                        <PowerEase></PowerEase>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button>
+                Quadratic
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:3"
+                                                 From="40"
+                                                 Storyboard.TargetName="CircleSeven"
+                                                 Storyboard.TargetProperty="(Canvas.Top)"
+                                                 To="200">
+                                    <DoubleAnimation.EasingFunction>
+                                        <QuadraticEase></QuadraticEase>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button>
+                Quintic
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:3"
+                                                 From="40"
+                                                 Storyboard.TargetName="CircleEight"
+                                                 Storyboard.TargetProperty="(Canvas.Top)"
+                                                 To="200">
+                                    <DoubleAnimation.EasingFunction>
+                                        <QuinticEase></QuinticEase>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button Content="Sine">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="ButtonBase.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:3"
+                					From="40"
+                					Storyboard.TargetName="CircleNine"
+                					Storyboard.TargetProperty="(Canvas.Top)"
+                					To="200">
+                                    <DoubleAnimation.EasingFunction>
+                                        <SineEase/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackPanel>
+
+        <Canvas Grid.Row="1">
+            <Ellipse x:Name="CircleOne"
+                     Canvas.Top="40"
+                     Width="50"
+                     Height="50"
+                     Fill="Salmon" />
+            <Ellipse x:Name="CircleTwo"
+                     Canvas.Left="50"
+                     Canvas.Top="40"
+                     Width="50"
+                     Height="50"
+                     Fill="Salmon" />
+            <Ellipse x:Name="CircleThree"
+                     Canvas.Left="105"
+                     Canvas.Top="40"
+                     Width="50"
+                     Height="50"
+                     Fill="Salmon" />
+            <Ellipse x:Name="CircleFour"
+                     Canvas.Left="155"
+                     Canvas.Top="40"
+                     Width="50"
+                     Height="50"
+                     Fill="Salmon" />
+            <Ellipse x:Name="CircleFive"
+                     Canvas.Left="210"
+                     Canvas.Top="40"
+                     Width="50"
+                     Height="50"
+                     Fill="Salmon" />
+            <Ellipse x:Name="CircleSix"
+                     Canvas.Left="260"
+                     Canvas.Top="40"
+                     Width="50"
+                     Height="50"
+                     Fill="Salmon" />
+            <Ellipse x:Name="CircleSeven"
+                     Canvas.Left="310"
+                     Canvas.Top="40"
+                     Width="50"
+                     Height="50"
+                     Fill="Salmon" />
+            <Ellipse x:Name="CircleEight"
+                     Canvas.Left="365"
+                     Canvas.Top="40"
+                     Width="50"
+                     Height="50"
+                     Fill="Salmon" />
+            <Ellipse x:Name="CircleNine"
+                     Canvas.Left="420"
+                     Canvas.Top="40"
+                     Width="50"
+                     Height="50"
+                     Fill="Salmon" />
+        </Canvas>
+    </Grid>
+</controls:View>

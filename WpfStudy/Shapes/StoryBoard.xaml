@@ -1,0 +1,128 @@
+﻿<Window x:Class="WpfStudy.Shapes.StoryBoard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="StoryBoard"
+        Width="800"
+        Height="600"
+        Background="YellowGreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Width="400" HorizontalAlignment="Left">
+                <Border Background="Brown"
+                        BorderBrush="White"
+                        BorderThickness="0,0,0,1">
+                    <Ellipse Width="36"
+                             Height="36"
+                             Margin="1"
+                             HorizontalAlignment="Left"
+                             Fill="Bisque"
+                             Stroke="White"
+                             StrokeThickness="1">
+                        <Ellipse.RenderTransform>
+                            <TranslateTransform x:Name="WhiteAthlete" />
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+                </Border>
+                <Border Background="Brown"
+                        BorderBrush="White"
+                        BorderThickness="0,0,0,1">
+                    <Ellipse Width="36"
+                             Height="36"
+                             Margin="1"
+                             HorizontalAlignment="Left"
+                             Fill="Black"
+                             Stroke="White"
+                             StrokeThickness="1">
+                        <Ellipse.RenderTransform>
+                            <TranslateTransform x:Name="BlackAthlete" />
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+                </Border>
+                <Border Background="Brown"
+                        BorderBrush="White"
+                        BorderThickness="0,0,0,1">
+                    <Ellipse Width="36"
+                             Height="36"
+                             Margin="1"
+                             HorizontalAlignment="Left"
+                             Fill="Orange"
+                             Stroke="White"
+                             StrokeThickness="1">
+                        <Ellipse.RenderTransform>
+                            <TranslateTransform x:Name="BrownAthlete" />
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+                </Border>
+            </StackPanel>
+            <Button Height="40" Content="Run!!" Margin="50,0,0,80" Click="RunByCode"></Button>
+            <Button Height="40"
+                    Margin="-33,10,0,0"
+                    VerticalAlignment="Center"
+                    Content="Run!">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Duration="0:0:10"
+                                                 FillBehavior="HoldEnd"
+                                                 Storyboard.TargetName="WhiteAthlete"
+                                                 Storyboard.TargetProperty="X"
+                                                 To="400" >
+                                    <DoubleAnimation.EasingFunction>
+                                        <ElasticEase Springiness="2"></ElasticEase>
+                                    </DoubleAnimation.EasingFunction>
+                                    </DoubleAnimation>
+                                <!--
+                                    <DoubleAnimation Duration="0:0:10"
+                                    FillBehavior="HoldEnd"
+                                    Storyboard.TargetName="WhiteAthlete"
+                                    Storyboard.TargetProperty="Y"
+                                    To="400" />
+                                -->
+                                <DoubleAnimation Duration="0:0:10"
+                                                 FillBehavior="HoldEnd"
+                                                 Storyboard.TargetName="BlackAthlete"
+                                                 Storyboard.TargetProperty="X"
+                                                 To="400" >
+                                    <DoubleAnimation.EasingFunction>
+                                        <PowerEase Power="2"></PowerEase>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <!--
+                                    <DoubleAnimation Duration="0:0:10"
+                                    FillBehavior="HoldEnd"
+                                    Storyboard.TargetName="BlackAthlete"
+                                    Storyboard.TargetProperty="Y"
+                                    To="400" />
+                                -->
+                                <DoubleAnimation Duration="0:0:10"
+                                                 FillBehavior="HoldEnd"
+                                                 Storyboard.TargetName="BrownAthlete"
+                                                 Storyboard.TargetProperty="X"
+                                                 To="400" >
+                                    <DoubleAnimation.EasingFunction>
+                                        <QuinticEase EasingMode="EaseIn"></QuinticEase>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <!--
+                                    <DoubleAnimation Duration="0:0:10"
+                                    FillBehavior="HoldEnd"
+                                    Storyboard.TargetName="BrownAthlete"
+                                    Storyboard.TargetProperty="Y"
+                                    To="400" />
+                                -->
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

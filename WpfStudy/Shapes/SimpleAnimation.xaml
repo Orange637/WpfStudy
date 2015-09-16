@@ -1,0 +1,164 @@
+﻿<controls:View x:Class="WpfStudy.Shapes.SimpleAnimation"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:controls="clr-namespace:WpfStudy.Resources.Controls;assembly=WpfStudy.Resources"
+               Title="SimpleAnimation"
+               Width="500"
+               Height="500">
+
+    <controls:View.Resources>
+        <PathGeometry x:Key="RectanglePath">
+            <PathFigure IsClosed="True" StartPoint="35,200">
+                <PolyLineSegment Points="35,300 300,300 300,200 200,200" />
+            </PathFigure>
+        </PathGeometry>
+    </controls:View.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button Width="70" Click="RotateRectOne">Rotate Rectangle</Button>
+            <Button Width="70">
+                Move Ellipse
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation AutoReverse="True"
+                                                 Duration="0:0:2"
+                                                 FillBehavior="Stop"
+                                                 Storyboard.TargetName="EllipseOne"
+                                                 Storyboard.TargetProperty="(Canvas.Left)"
+                                                 To="400" />
+                                <ColorAnimation AutoReverse="True"
+                                                Duration="0:0:2"
+                                                FillBehavior="Stop"
+                                                Storyboard.TargetName="ColorOne"
+                                                Storyboard.TargetProperty="Color"
+                                                To="Goldenrod" />
+                                <ColorAnimation AutoReverse="True"
+                                                Duration="0:0:2"
+                                                FillBehavior="Stop"
+                                                Storyboard.TargetName="ColorTwo"
+                                                Storyboard.TargetProperty="Color"
+                                                To="OrangeRed" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button Width="70">
+                Change Color
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation AutoReverse="True"
+                                                 Duration="0:0:2"
+                                                 FillBehavior="Stop"
+                                                 Storyboard.TargetName="StopTwo"
+                                                 Storyboard.TargetProperty="Offset"
+                                                 To="0.1" />
+                                <ColorAnimation AutoReverse="True"
+                                                Duration="0:0:2"
+                                                FillBehavior="Stop"
+                                                Storyboard.TargetName="StopTwo"
+                                                Storyboard.TargetProperty="Color"
+                                                To="Red" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button Width="70">
+                Move control through Path
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimationUsingPath Duration="0:0:6"
+                                                          FillBehavior="Stop"
+                                                          PathGeometry="{StaticResource RectanglePath}"
+                                                          Source="X"
+                                                          Storyboard.TargetName="EllipseTwo"
+                                                          Storyboard.TargetProperty="(Canvas.Left)" />
+                                <DoubleAnimationUsingPath Duration="0:0:6"
+                                                          FillBehavior="Stop"
+                                                          PathGeometry="{StaticResource RectanglePath}"
+                                                          Source="Y"
+                                                          Storyboard.TargetName="EllipseTwo"
+                                                          Storyboard.TargetProperty="(Canvas.Top)" />
+                                <DoubleAnimationUsingKeyFrames AutoReverse="True"
+                                                               FillBehavior="Stop"
+                                                               RepeatBehavior="Forever"
+                                                               Storyboard.TargetName="StopTwo"
+                                                               Storyboard.TargetProperty="Offset">
+                                    <LinearDoubleKeyFrame KeyTime="0:0:0.5" Value="0.7" />
+                                    <LinearDoubleKeyFrame KeyTime="0:0:1" Value="0.5" />
+                                    <LinearDoubleKeyFrame KeyTime="0:0:2" Value="0.3" />
+                                    <LinearDoubleKeyFrame KeyTime="0:0:3" Value="0.1" />
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackPanel>
+
+        <Canvas Grid.Row="1">
+            <Rectangle x:Name="RectOne"
+                       Canvas.Left="35"
+                       Canvas.Top="30"
+                       Width="50"
+                       Height="60"
+                       Fill="GreenYellow"
+                       RenderTransformOrigin="0.5,0.5" />
+            <Ellipse x:Name="EllipseOne"
+                     Canvas.Left="60"
+                     Canvas.Top="95"
+                     Canvas.Bottom="30"
+                     Width="100"
+                     Height="100">
+                <Ellipse.Fill>
+                    <LinearGradientBrush>
+                        <GradientStop x:Name="ColorOne" Color="Gainsboro" />
+                        <GradientStop x:Name="ColorTwo" Offset="1" Color="SkyBlue" />
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+                <!--
+                    <Ellipse.RenderTransform>
+                    <ScaleTransform x:Name="ScaleEllipse"></ScaleTransform>
+                    </Ellipse.RenderTransform>
+                -->
+            </Ellipse>
+            <Rectangle x:Name="RectTwo"
+                       Canvas.Left="140"
+                       Canvas.Top="30"
+                       Canvas.Right="230"
+                       Width="342"
+                       Height="60">
+                <Rectangle.Fill>
+                    <LinearGradientBrush>
+                        <GradientStop Offset="0" Color="Gold" />
+                        <GradientStop x:Name="StopTwo" Offset="1" Color="OrangeRed" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Ellipse x:Name="EllipseTwo"
+                     Canvas.Left="35"
+                     Canvas.Top="200"
+                     Width="50"
+                     Height="50">
+                <Ellipse.Fill>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Gainsboro" />
+                        <GradientStop Offset="1" Color="SkyBlue" />
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Canvas>
+    </Grid>
+</controls:View>

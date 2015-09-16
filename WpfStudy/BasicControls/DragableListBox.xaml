@@ -1,0 +1,53 @@
+﻿<Window x:Class="WpfStudy.BasicControls.DragableListBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Drop and Drag" Height="800" Width="800">
+    <Window.Resources>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <EventSetter Event="PreviewMouseLeftButtonDown"
+                           Handler="HandlerPreviewMouseLeftButtonDown"/>
+            <EventSetter Event="PreviewMouseMove"
+                          Handler="HandlerPreviewMouseMove"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Column="0" Name="sourceList" AllowDrop="True" Margin="5"
+               DragEnter="sourceList_DragEnter"  
+                 HorizontalContentAlignment="Stretch">
+            <!--Drop="sourceList_Drop"  -->
+
+            <ListBox.ItemTemplate>
+
+                <DataTemplate>
+
+                    <Border Margin="3" BorderBrush="Brown" BorderThickness="1" CornerRadius="5">
+
+                        <TextBlock Margin="2" Text="{Binding}"/>
+                    </Border>
+
+                </DataTemplate>
+
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
+        <ListBox Grid.Column="1" Name="destList" AllowDrop="True" Margin="5"
+                Drop="destList_Drop"
+                 HorizontalContentAlignment="Stretch">
+            <!--DragEnter="destList_DragEnter"  -->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="3" BorderBrush="Brown" BorderThickness="1" CornerRadius="5">
+                        <TextBlock Margin="2" Text="{Binding}"/>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window> 

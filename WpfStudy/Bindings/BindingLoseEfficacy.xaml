@@ -1,0 +1,81 @@
+﻿<Window x:Class="WpfStudy.Bindings.BindingLoseEfficacy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BindingLoseEfficacy"
+        Width="800"
+        Height="500"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBox Text="{Binding ShowString, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="{Binding ShowString, FallbackValue='?--Fallback', TargetNullValue='?--Target Null'}" />
+            <Button Click="ChangeShowString" Content="Change Object Reference" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="{Binding ShowObject1, FallbackValue='?--Fallback', TargetNullValue='?--Target Null'}" />
+            <Button Click="ChangeShowObject1" Content="Change Custom Object 1 Reference" />
+            <Button Click="ChangeShowObject1ToNull" Content="Change Custom Object 1 to null" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" DataContext="{Binding ShowObject2}">
+            <TextBox Text="{Binding CustomObjectString, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="{Binding CustomObjectString, FallbackValue='?--Fallback', TargetNullValue='?--Target Null'}" />
+            <TextBlock Text="{Binding FallbackValue='?--Fallback', TargetNullValue='?--Target Null'}" />
+            <Button Click="ChangeShowObject2" Content="Change Custom Object 2 Reference" />
+            <Button Click="ChangeShowObject2ToNull" Content="Change Custom Object 2 To Null" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3">
+            <TextBox Text="{Binding ShowObject3.CustomObjectString, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="{Binding ShowObject3.CustomObjectString, FallbackValue='?--Fallback', TargetNullValue='?--Target Null'}" />
+            <TextBlock Text="{Binding ShowObject3, FallbackValue='?--Fallback', TargetNullValue='?--Target Null'}" />
+            <Button Click="ChangeShowObject3" Content="Change Custom Object 3 Reference" />
+            <Button Click="ChangeShowObject3ToNull" Content="Change Custom Object 3 To Null" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="1"
+                    Background="Red"
+                    DataContext="{Binding NestedObject1}">
+            <TextBox Text="{Binding InnerObject.CustomObjectString, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="{Binding InnerObject.CustomObjectString}" />
+            <TextBlock Text="{Binding InnerObject}" />
+            <Button Click="ChangeNestedObject1" Content="Change NestedObject1 Reference" />
+            <Button Click="ChangeNestedObject1ToNull" Content="Change NestedObject1 To Null" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1"
+                    Background="SkyBlue"
+                    DataContext="{Binding NestedObject2}">
+            <TextBox Text="{Binding InnerObject.CustomObjectString, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="{Binding InnerObject.CustomObjectString}" />
+            <TextBlock Text="{Binding InnerObject}" />
+            <Button Click="ChangeNestedObject2" Content="Change NestedObject2Reference" />
+            <Button Click="ChangeNestedObject2ToNull" Content="Change NestedObject2 To Null" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2"
+                    Grid.Column="1"
+                    Background="CadetBlue">
+            <TextBox Text="{Binding InnerObject3.CustomObjectString, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBlock Text="{Binding InnerObject3.CustomObjectString}" />
+            <TextBlock Text="{Binding InnerObject3}" />
+            <Button Click="ChangeNestedObject3" Content="Change NestedObject3Reference" />
+            <Button Click="ChangeNestedObject3ToNull" Content="Change NestedObject3 To Null" />
+        </StackPanel>
+    </Grid>
+</Window>

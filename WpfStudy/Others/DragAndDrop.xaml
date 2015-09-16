@@ -1,0 +1,33 @@
+﻿<controls:View x:Class="WpfStudy.Others.DragAndDrop"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:controls="clr-namespace:WpfStudy.Resources.Controls;assembly=WpfStudy.Resources"
+               Title="DragAndDrop"
+               Width="500"
+               Height="300"
+               WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Border BorderBrush="Black" BorderThickness="2">
+            <Canvas x:Name="Source"
+                    Background="White"
+                    MouseLeftButtonDown="OnBeginDrag" />
+        </Border>
+
+        <Border Grid.Column="2"
+                BorderBrush="Black"
+                BorderThickness="2">
+            <WrapPanel x:Name="Target"
+                       AllowDrop="True"
+                       Background="Yellow"
+                       Drop="OnDrop"
+                       ItemHeight="50"
+                       ItemWidth="50" />
+        </Border>
+    </Grid>
+</controls:View>

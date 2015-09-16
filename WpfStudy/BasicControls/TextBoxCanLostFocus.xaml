@@ -1,0 +1,87 @@
+﻿<Window x:Class="WpfStudy.BasicControls.TextBoxCanLostFocus"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:behaviors="clr-namespace:WpfStudy.Resources.Behaviors;assembly=WpfStudy.Resources"
+        Title="TextBoxCanLostFocus"
+        Width="800"
+        Height="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock>1.Normal TextBox can't lost focus, only if you other control get focused.</TextBlock>
+
+            <TextBox Width="200"
+                     HorizontalAlignment="Left"
+                     Text="Click on the Rectangle" />
+
+            <Rectangle Width="200"
+                       Height="30"
+                       Fill="Red" />
+
+            <TextBlock>When you click on the Rectangle, the TextBox still get Focused.</TextBlock>
+        </StackPanel>
+
+        <Grid x:Name="GetFocusContainer"
+              Grid.Row="1"
+              Background="Transparent"
+              FocusVisualStyle="{x:Null}"
+              Focusable="True"
+              IsHitTestVisible="True"
+              MouseLeftButtonDown="GetFocused">
+            <StackPanel>
+                <TextBlock>2.Normal TextBox can't lost focus, only if you other control get focused.</TextBlock>
+
+                <TextBox Canvas.Left="300"
+                         Width="200"
+                         HorizontalAlignment="Left"
+                         Text="Click on the Rectangle" />
+
+                <Rectangle Width="200"
+                           Height="30"
+                           Fill="Red" />
+
+                <TextBlock>When you click on the Rectangle, the TextBox still lost Focused.</TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2" behaviors:FocusService.CanGetFocused="True">
+            <StackPanel>
+                <TextBlock>3.We use attached property to do this work, to make Panel can get foucsed.</TextBlock>
+
+                <TextBox Canvas.Left="300"
+                         Width="200"
+                         HorizontalAlignment="Left"
+                         Text="Click on the Rectangle" />
+
+                <Rectangle Width="200"
+                           Height="30"
+                           Fill="Red" />
+
+                <TextBlock>When you click on the Rectangle, the TextBox still get Focused.</TextBlock>
+            </StackPanel>
+        </Grid>
+
+        <ContentControl Grid.Row="2">
+            <StackPanel behaviors:FocusService.CanGetFocused="True">
+                <TextBlock>3.We use attached property to do this work, to make Panel can get foucsed.</TextBlock>
+
+                <TextBox Canvas.Left="300"
+                         Width="200"
+                         HorizontalAlignment="Left"
+                         Text="Click on the Rectangle" />
+
+                <Rectangle Width="200"
+                           Height="30"
+                           Fill="Red" />
+
+                <TextBlock>When you click on the Rectangle, the TextBox still get Focused.</TextBlock>
+            </StackPanel>
+        </ContentControl>
+    </Grid>
+</Window>
